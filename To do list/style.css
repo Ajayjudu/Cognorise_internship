@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+    display: -ms-grid;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f6f6f6;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px #e6e6e6;
+    width: 50vw;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  header > img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .main > input {
+    padding: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .main > a {
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+  }
+  
+  .main > .inactive {
+    background-color: #f6f6f6;
+    color: #888;
+  }
+  
+  .main > ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  .main > ul > li {
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    -webkit-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -moz-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-left: 4px solid #1d2658;
+  }
+  
+  .is-selected > span > input[type='text'] {
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 4px 8px;
+  }
+  
+  .main > ul > li > input {
+    padding: 0 8px;
+  }
+  
+  .is-selected > img {
+    content: url('../images/delete.png');
+    cursor: pointer !important;
+  }
+  
+  .completed > img {
+    filter: invert(1);
+  }
+  
+  .main > ul > li > img {
+    height: 24px;
+    cursor: all-scroll;
+  }
+  
+  .completed > span {
+    color: #fff;
+  }
+  
+  .main > ul > li > span {
+    flex: 1;
+    margin: 0 8px;
+    display: flex;
+    justify-content: stretch;
+  }
+  
+  .main > ul > li > span > * {
+    width: 100%;
+  }
+  
+  .completed {
+    background-color: #3f51b5;
+    margin-left: 4px;
+    border-bottom: 0;
+  }
+  
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: red;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #1d2658;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: -ms-grid;
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #1d2658;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
